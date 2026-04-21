@@ -1,0 +1,47 @@
+<output id="output"></output>
+<script src="https://cdn.jsdelivr.net/npm/markdown@0.5.0/lib/markdown.min.js"></script>
+
+<script>
+  const output = document.getElementById("output");
+
+  (async () => {
+    output.innerHTML = "Checando modelo...";
+
+    const modelAvailability = await LanguageModel.availability();
+
+    if (modelAvailability !== "available") {
+      output.innerHTML = "Modelo nao disponivel!";
+      console.log("Language Model not available:");
+      return;
+    }
+
+    const initialPrompts = [
+      {
+        role: "system",
+        content:
+          "Teste de IA diretamente do navegador, resposta diretas e objetivvas, com apenas texto."
+      },
+    ];
+
+    output.innerHTML = "Iniciando modelo...";
+
+    const modelSession = await LanguageModel.create({
+      expectedInputLanguages: ["pt"],
+      temperature: 1,
+      topK: 3,
+      initialPrompts,
+    });
+
+    output.innerHTML = "Gerando resposta...";
+
+    const question = "Qual idade ficamos careca?";
+
+    const responseStream = await modelSession.promptStreaming(question);
+
+    let fullText = "";
+    for await (const token of responseStream) {
+      fullText += token;
+      output.innerHTML = markdown.toHTML(fullText);
+    }
+  })();
+</script>
