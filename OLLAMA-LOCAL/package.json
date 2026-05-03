@@ -1,0 +1,21 @@
+{
+  "name": "batata-baroa-info",
+  "version": "1.0.0",
+  "description": "Página estática com informações sobre batata baroa",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "batata-baroa",
+    "batata-doce",
+    "informações-nutricionais",
+    "culinária"
+  ],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "^14.2.6"
+  }
+}
