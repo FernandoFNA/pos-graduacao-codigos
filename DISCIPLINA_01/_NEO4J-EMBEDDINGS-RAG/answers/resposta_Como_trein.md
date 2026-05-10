@@ -1,0 +1,5 @@
+Treinar uma rede neural envolve alimentar o modelo com dados de entrada, permitindo que ele ajuste seus pesos e bias para aprender padrões nos dados. No contexto do TensorFlow.js, você pode treinar uma rede neural alimentando-a com exemplos de entrada e saída desejada, ajustando os parâmetros internos durante o processo de treinamento.
+
+No exemplo mencionado, a rede neural seria treinada com dados normalizados, como a idade das pessoas, para classificar a categoria na qual elas se encaixam. Cada neurônio na rede recebe os valores de entrada, realiza cálculos internos e gera uma saída. Com o tempo e o treinamento adequado, a rede neural é capaz de fazer previsões com base nos padrões aprendidos.
+
+É importante ajustar a arquitetura da rede neural, como o número de neurônios em cada camada, para obter os melhores resultados. Com o TensorFlow.js, é possível criar e treinar redes neurais de forma eficiente, permitindo a implementação de modelos de machine learning em aplicações web de maneira acessível e poderosa.
